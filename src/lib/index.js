@@ -9,5 +9,8 @@ const keyboard = {
         // 虽然没有明确规定用$开头  但是大家都默认遵守这个规定
 	}
 }
-
+// 新增
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(vueKeyboard);
+}
 export default keyboard;
