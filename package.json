@@ -5,10 +5,10 @@
   "author": "scyuan <644397334@qq.com>",
   "license": "MIT",
   "private": false,
-  "main":"dist/vue-keyboard.js",
+  "main":"dist/vue2-keyboard.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scyuan/vue-keyboard.git"
+    "url": "https://github.com/scyuan/vue2-keyboard.git"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
