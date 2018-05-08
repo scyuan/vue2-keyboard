@@ -8,8 +8,8 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     // filename: 'build.js'
-    filename : 'vue-keyboard.js',
-    library: 'VueKeyboard', // library指定的就是你使用require时的模块名，这里便是require("PayKeyboard")
+    filename : 'vue2-keyboard.js',
+    library: 'Vue2Keyboard', // library指定的就是你使用require时的模块名，这里便是require("PayKeyboard")
     libraryTarget: 'umd', //libraryTarget会生成不同umd的代码,可以只是commonjs标准的，也可以是指amd标准的，也可以只是通过script标签引入的。
     umdNamedDefine: true
   },
