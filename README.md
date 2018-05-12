@@ -1,18 +1,39 @@
-# vue-keyboard
+### vue-keyboard
 
-> A Vue.js project
+> 一个基于vue的移动端数字键盘组件
 
-## Build Setup
+### install
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+npm install vue2-keyboard --save
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### quick start
+
+main.js
+
+```JavaScript
+
+import vueKeyboard from 'vue2-keyboard'
+Vue.use(vueKeyboard)
+
+```
+
+component.vue
+
+```JavaScript
+
+<vue-keyboard v-bind:inputclass="input" v-on:value='getValue'></vue-keyboard>
+
+
+```
+
+### option
+
+property | description 
+- | :-: | -: 
+inputclass | 组件样式
+value | 返回值回调
+
+
+
