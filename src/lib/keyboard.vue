@@ -15,7 +15,8 @@
 			<li class="br bt" @click='click(7)'>7</li>
 			<li class="br bt" @click='click(8)'>8</li>
 			<li class="bt" @click='click(9)'>9</li>
-			<li class="br bt dott" @click='click(".")'>.</li>
+			<li class="br bt dott" v-if='type === "password"'></li>
+			<li class="br bt dott n" @click='click(".")' v-else>.</li>
 			<li class="br bt" @click='click(0)'>0</li>
 			<li class="bt delete" @click='deleteLast()'>X</li>
 		</ul>
@@ -25,22 +26,51 @@
 <script>
 	export default{
 		name:'v-keyboard',
+		props:{
+			type:{
+				type:String,
+				default:'text'
+			},
+			accuratee:{
+				type:String,
+				default:"2"
+			}
+		},
 		data(){
 			return {
 				showme:false,
 				result:'',
+				typee:null,
 			}
 		},
 		methods:{
-			show(val){
+			show(val,typee){
 				this.result = val;
+				
 				this.showme = true;
 			},
 			hide(){
 				this.result = '';
+				
 				this.showme = false;
 			},
 			click(num){
+
+				// 最多只能输入一个 . 号
+				if(num === '.' && this.result.indexOf(num) > -1){
+					return ;
+				}
+				
+				// 根据精确度判断是否能输入
+				if(this.type === 'text' && 
+				   this.result.indexOf('.') > -1 && 
+				   (this.result.length - this.result.indexOf('.')) > parseInt(this.accuratee)){
+
+				   return ;
+				}
+
+				
+
 				this.result = this.result + num;
 				
 				this.$emit('input',this.result);
@@ -89,7 +119,7 @@ ul>li:hover{
 ul .dott,ul .delete{
 	background: #dfdfdf;
 }
-ul .dott:hover,ul .delete:hover{
+ul .n:hover,ul .delete:hover{
 	background: #fff;
 }
 .board-slide-enter,.board-slide-leave-to{

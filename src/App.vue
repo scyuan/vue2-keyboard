@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-keyboard v-bind:inputclass="input" v-on:value='getValue'></vue-keyboard>
+    <vue-keyboard type='text' setClass="input" accurate='3' @value='getValue' placeholder='请输入金额'></vue-keyboard>
   </div>
 </template>
 
@@ -10,12 +10,12 @@ export default {
   data () {
     return {
         value:'',
-        input:'input'
+        input:'input',
     }
   },
   methods:{
       getValue(val){
-        
+        // console.log(val);
       }
   }
 
@@ -28,8 +28,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-.input{
-  border: 1px solid red;
 }
 </style>

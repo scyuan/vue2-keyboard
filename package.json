@@ -1,6 +1,6 @@
 {
   "name": "vue2-keyboard",
-  "description": "A Vue.js project",
+  "description": "一个基于vue的移动端数字键盘组件(A vue-based mobile-side numeric keyboard assembly)。",
   "version": "1.1.0",
   "author": "scyuan <644397334@qq.com>",
   "license": "MIT",
